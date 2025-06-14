@@ -105,7 +105,7 @@ let calculateOriginalPrice = function(priceWithTax) {
   return priceWithTax / (1 + TAX_RATE)
 }
 
-console.log(calculateOriginalPrice(10000))
+console.log(parseInt(calculateOriginalPrice(10000)))
 
 
 // --------------------------------------------------------------------------------------
