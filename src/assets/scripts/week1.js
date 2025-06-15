@@ -182,37 +182,38 @@ console.log(canSellAlcohol(registrationCard.age))
 
 // console.log(getDiscountedPrice())
 
-// 3) getDiscountedPrice 함수 선언 내부에 할인가 계산식을 로그로 찍어본다
+// 3) 할인율을 변수에 담아 계산식 넣는다.
 // function getDiscountedPrice(originalPrice, discountPercent) {
-//   console.log(originalPrice - discountPercent)
+//   let discountPrice = originalPrice * discountPercent / 100
+//   // console.log(discountPrice = originalPrice * discountPercent / 100)
 // }
 
 // console.log(getDiscountedPrice(18700, 20))
 
-// 4) 할인율을 변수에 담아 계산식 넣는다.
+// 4) getDiscountedPrice 함수 선언 내부에 할인가 계산식을 로그로 찍어본다
 // function getDiscountedPrice(originalPrice, discountPercent) {
-//   let totalDiscountPrice = originalPrice * discountPercent / 100
-//   // console.log(totalDiscountPercent = originalPrice * discountPercent / 100)
-//   console.log(originalPrice - totalDiscountPrice)
+//   let discountPrice = originalPrice * discountPercent / 100
+//   // console.log(discountPrice = originalPrice * discountPercent / 100)
+//   console.log(originalPrice - discountPrice)
 // }
 
 // console.log(getDiscountedPrice(18700, 20))
 
 // 5) 원가 값을 반환한다. 반환값 타입이 Number 확인함
 // function getDiscountedPrice(originalPrice, discountPercent) {
-//   let totalDiscountPrice = originalPrice * discountPercent / 100
+//   let discountPrice = originalPrice * discountPercent / 100
 
-//   return totalPrice = originalPrice - totalDiscountPrice
+//   return totalDiscountPrice = originalPrice - discountPrice
 // }
 
 // console.log(getDiscountedPrice(18700, 20))
 
 // 6) 원가값을 변수에 담고 총 반환해야 하는 문구를 넣는다.
 function getDiscountedPrice(originalPrice, discountPercent) {
-  let totalDiscountPrice = originalPrice * discountPercent / 100
-  let totalPrice = originalPrice - totalDiscountPrice
+  let discountPrice = originalPrice * discountPercent / 100
+  let totalDiscountPrice = originalPrice - discountPrice
 
-  return '판매가가 ' + originalPrice + '원이고, 할인율이 ' + discountPercent + '%인 경우 계산된 할인가는 ' + totalPrice + '원입니다.'
+  return '판매가가 ' + originalPrice + '원이고, 할인율이 ' + discountPercent + '%인 경우 계산된 할인가는 ' + totalDiscountPrice + '원입니다.'
 }
 
 console.log(getDiscountedPrice(18700, 20))
