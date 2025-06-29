@@ -3,4 +3,5 @@
 **14기 성정은**
 
 - [1주차 과제 수행 내용 및 회고](./src/md/week1-retrospect.md)
+- [3주차 과제 수행 내용 및 회고](./src/md/week3-retrospect.md)
 
