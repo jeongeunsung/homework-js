@@ -1,12 +1,93 @@
-<!DOCTYPE html>
-<html lang="ko-KR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <script type="module" src="./src/assets/scripts/week1.js"></script>
-</head>
-<body>
-  <h1>javascript 과제</h1>
-</body>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="성정은 Carousel 컴포넌트 과제 페이지입니다." />
+    <title>HTML/CSS 과제</title>
+    <link rel="shortcut icon" href="./public/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="./public/favicon/likelion.svg" type="image/svg" />
+    <link rel="preload" as="style" href="./public/fonts/pretendard/woff2/PretendardVariable.woff2"  crossorigin="anonymous" />
+    <link rel="stylesheet" href="./public/fonts/pretendard/pretendardvariable.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Pretendard Variable', sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .profile-card {
+        background: white;
+        border-radius: 1.25rem;
+        box-shadow: 0 .625rem 1.25rem rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        width: 18.75rem;
+        text-align: center;
+      }
+
+      .profile-image {
+        width: 9.375rem;
+        height: 9.375rem;
+        border-radius: 50%;
+        margin-bottom: 1.5rem;
+        object-fit: cover;
+        border: .3125rem solid #f0f0f0;
+      }
+
+      .name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .bio {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .homework-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .homework-links li {
+        width: 50%;
+      }
+
+      .homework-links a {
+        display: block;
+        text-align: center;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .homework-links a:hover {
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <img src="./src/assets/images/me.jpg" alt="성정은 프로필" class="profile-image" />
+      <h1 class="name">성정은</h1>
+      <p class="bio">멋쟁이 사자처럼 프론트엔드 부트캠프 14기 성정은 입니다.</p>
+      <p>과제 결과는 링크를 선택해주세요.</p>
+      <ul class="homework-links">
+        <li><a href="./src/component/week1/week1.js">1주차 과제</a></li>
+        <li><a href="./src/component/carousel/index.html">3주차 과제</a></li>
+      </ul>
+    </div>
+  </body>
 </html>

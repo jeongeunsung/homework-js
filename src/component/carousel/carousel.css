@@ -1,0 +1,280 @@
+:root {
+  --base-font-family: "Noto Sans KR", sans-serif;
+
+  /* 색상 테마 */
+  --white: #fff;
+  --black-100: #000;
+  --black-200: #333;
+  --red: #ff1414;
+  --gray-100: #dadada;
+  --grey-200: #999;
+  --primary-color: #03cf5d;
+
+  /* 글자 크기 */
+  --size-14: 0.875rem;
+  --size-16: 1rem;
+  --size-18: 1.125rem;
+
+  /* 줄 높이 */
+  --leading-base: 1.12;
+
+  /* 행간 */
+  --letter-spacing-base: -0.00875em;
+
+  /* 여백 및 간격 */
+  --spacing-2: 0.125rem;
+  --spacing-4: 0.25rem;
+  --spacing-7: 0.4375rem;
+  --spacing-8: 0.5rem;
+  --spacing-10: 0.625rem;
+  --spacing-12: 0.75rem;
+  --spacing-13: 0.8125rem;
+  --spacing-14: 0.875rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+}
+
+body {
+  font-size: var(--size-14);
+  color: var(--black-100);
+  line-height: var(--leading-base);
+  letter-spacing: var(--letter-spacing-base);
+  font-family: var(--base-font-family);
+  background-color: #000;
+  font-weight: 300;
+}
+
+:focus-visible {
+  outline: 1px solid #2049df;
+}
+
+/* 컴포넌트 가이드 */
+.component-wrapper {
+  margin: 30px;
+
+  .dotted-commponent {
+    border: 2px dotted purple;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+            background-color: #fff;
+  }
+}
+
+.circle-button {
+  --circle-size-40: 2.5rem;
+
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  inline-size: var(--circle-size-40);
+  block-size: var(--circle-size-40);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &.prev svg {
+    transform: rotate(180deg);
+  }
+}
+
+.title-link {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 6px;
+  padding-block: 5.5px 6.5px;
+  padding-inline: 10.5px;
+  border-radius: 999px;
+  font-size: var(--size-18);
+  color: var(--black-200);
+  font-weight: 700;
+  line-height: 1.12;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.item-box {
+  inline-size: inherit;
+
+  picture {
+    display: inline-block;
+    inline-size: 10rem;
+    block-size: 10.6875rem;
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    padding-block-start: .6875rem;
+    border-radius: 0.5rem;
+    
+    &:hover::after {
+      transform: scale(1.015);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background-size: 100%;
+      width: 10rem;
+      height: 10.6875rem;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      border-radius: .5rem;
+      transition: transform 0.4s ease;
+      transform-origin: center bottom;
+    }
+
+    img {
+      border-radius: .5rem;
+    }
+  }
+
+  figcaption {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .game-title {
+      overflow: hidden;
+      margin-block-start: 0.5rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: var(--size-16);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .game-description {
+      overflow: hidden;
+      margin-block-start: 0.125rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .game-user-id {
+      margin-block-start: 0.5rem;
+      color: #595959;
+    }
+  }
+}
+
+/* 캐러셀 컴포넌트 */
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-block: 3.125rem;
+}
+
+.carousel-commponent {
+  inline-size: 24rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 0.25rem 0px rgba(0, 0, 0, 0.04);
+}
+
+.carousel-header {
+  padding-inline: 0.625rem;
+  padding-block: 0.875rem;
+}
+
+.carousel-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+ 
+  .carousel-contains {
+    overflow: hidden;
+  }
+  
+  .carousel-list {
+    --width: 21.25rem;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    inline-size: var(--width);
+    position: relative;
+  }
+  
+  .carousel-item {
+    inline-size: 10rem;
+    padding-block-start: .1875rem;
+
+    a {
+      inline-size: inherit;
+
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+  }
+
+  .item01 picture {
+    &::after {
+      background: url(../../assets/images/img-character01.webp) no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  .item02 picture {
+    &::after {
+      background: url(../../assets/images/img-character02.webp) no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  .item03 picture {
+    &::after {
+      background: url(../../assets/images/img-character03.webp) no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  .item04 picture {
+    &::after {
+      background: url(../../assets/images/img-character04.webp) no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  .item05 picture {
+    &::after {
+      background: url(../../assets/images/img-character05.webp) no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  .item06 picture {
+    &::after {
+      background: url(../../assets/images/img-character06.webp) no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+
+
+.carousel-footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.875rem;
+
+  .indicators {
+    font-size: var(--size-18);
+
+    .total-page {
+      color: rgba(0, 0, 0, 0.64);
+    }
+  }
+}

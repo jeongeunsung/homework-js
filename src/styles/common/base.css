@@ -1,0 +1,40 @@
+body *, body *::before, body *::after{
+  box-sizing: border-box;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* image */
+a {
+  display: block;
+}
+
+iframe, img, object, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+picture {
+  display: block;
+}
+
+/* button */
+button {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
