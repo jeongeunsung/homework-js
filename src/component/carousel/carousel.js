@@ -14,6 +14,9 @@
   const indicatorTotalCounter = carouselItems.length / 2
   indicatorTotalPage.textContent = indicatorTotalCounter
 
+  // 화면의 처음 로드될때 tabindex 적용
+  settingTabindexControl()
+
   nextButton.addEventListener('click', function() {
     const selectedList = carouselList.querySelector('.' + SELECTED_CLASSNAME)
     let nextContent = selectedList.nextElementSibling.nextElementSibling
