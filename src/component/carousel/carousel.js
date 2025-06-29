@@ -15,7 +15,7 @@
   indicatorTotalPage.textContent = indicatorTotalCounter
 
   // 화면의 처음 로드될때 tabindex 적용
-  settingTabindexControl()
+  settingTabindexControlFn()
 
   nextButton.addEventListener('click', function() {
     const selectedList = carouselList.querySelector('.' + SELECTED_CLASSNAME)
@@ -33,7 +33,7 @@
     nextContent.classList.add(SELECTED_CLASSNAME)
 
     indicatorCurrentPageFn()
-    settingTabindexControl()
+    settingTabindexControlFn()
   })
 
   prevButton.addEventListener('click', function() {
@@ -57,7 +57,7 @@
     prevContent.classList.add(SELECTED_CLASSNAME)
 
     indicatorCurrentPageFn()
-    settingTabindexControl()
+    settingTabindexControlFn()
   })
 
   function indicatorCurrentPageFn() {
@@ -74,7 +74,7 @@
     })
   }
 
-  function settingTabindexControl() {
+  function settingTabindexControlFn() {
     //먼저 초기화로 tabindex=-1로 하고 뒤에 tabindex 속성 삭제
     carouselItems.forEach((item) => {
       const outTabIndex = item.querySelector('a')
