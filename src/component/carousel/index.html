@@ -18,12 +18,13 @@
   <div class="component-wrapper">
     <div class="dotted-commponent">
       <!-- 둥근 아이콘 버튼 -->
-      <button type="button" class="circle-button prev" title="이전">
+      <!-- 쌤 피드백: 버튼 레이블이 title 속성으로 설정되어 있는데 aria-label 속성을 사용하는 것이 더 나음 일부 스크린 리더는 title 속성 값을 읽지 않음 -->
+      <button type="button" class="circle-button prev" aria-label="이전">
         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
           <path d="M0.29297 0.29297C0.683494 -0.0975548 1.31651 -0.0975548 1.70703 0.29297L7.70703 6.29297C8.09756 6.68349 8.09756 7.31651 7.70703 7.70703L1.70703 13.707C1.31651 14.0976 0.683494 14.0976 0.29297 13.707C-0.0975548 13.3165 -0.0975548 12.6835 0.29297 12.293L5.58594 7L0.29297 1.70703C-0.0975548 1.31651 -0.0975548 0.683494 0.29297 0.29297Z" fill="#474747"/>
         </svg>
       </button>
-      <button type="button" class="circle-button next" title="다음">
+      <button type="button" class="circle-button next" aria-label="다음">
         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
           <path d="M0.29297 0.29297C0.683494 -0.0975548 1.31651 -0.0975548 1.70703 0.29297L7.70703 6.29297C8.09756 6.68349 8.09756 7.31651 7.70703 7.70703L1.70703 13.707C1.31651 14.0976 0.683494 14.0976 0.29297 13.707C-0.0975548 13.3165 -0.0975548 12.6835 0.29297 12.293L5.58594 7L0.29297 1.70703C-0.0975548 1.31651 -0.0975548 0.683494 0.29297 0.29297Z" fill="#474747"/>
         </svg>
@@ -31,7 +32,7 @@
     </div>
     <br />
     <div class="dotted-commponent">
-      <a href="/" class="title-link" target="_self" title="바로가기">
+      <a href="/" class="title-link" target="_self" aria-label="바로가기">
         <svg aria-hidden="true" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect x="0.499924" y="0.5" width="24" height="24" fill="url(#pattern0_4_45)"/>
           <defs>
@@ -53,7 +54,8 @@
         <figure>
           <picture>
             <source srcset="../../assets/images/bg-character01.webp" type="image/webp" />
-            <img src="../../assets/images/bg-character01.png" alt="" aria-hidden="true" />
+            <!-- 쌤 피드백: img 요소에 alt 값이 빈 경우, 스크린 리더는 해당 이미지를 표현으로 인식하고 읽지 않음 aria-hidden 속성을 설정할 필요 없음  -->
+            <img src="../../assets/images/bg-character01.png" alt="" />
           </picture>
           <figcaption>
             <strong class="game-title">크로노 오디세이</strong>
@@ -69,7 +71,7 @@
     <div class="carousel-commponent">
       <div class="carousel-header">
         <h2 class="carousel-title">
-          <a href="/" class="title-link" target="_self" title="바로가기">
+          <a href="/" class="title-link" target="_self" aria-label="바로가기">
             <svg aria-hidden="true" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect x="0.499924" y="0.5" width="24" height="24" fill="url(#pattern0_4_46)"/>
               <defs>
@@ -95,7 +97,7 @@
                   <figure>
                     <picture>
                       <source srcset="../../assets/images/bg-character01.webp" type="image/webp" />
-                      <img src="../../assets/images/bg-character01.png" alt="" aria-hidden="true" />
+                      <img src="../../assets/images/bg-character01.png" alt="" />
                     </picture>
                     <figcaption>
                       <strong class="game-title">크로노 오디세이</strong>
@@ -112,7 +114,7 @@
                   <figure>
                     <picture>
                       <source srcset="../../assets/images/bg-character02.webp" type="image/webp" />
-                      <img src="../../assets/images/bg-character02.png" alt="" aria-hidden="true" />
+                      <img src="../../assets/images/bg-character02.png" alt="" />
                     </picture>
                     <figcaption>
                       <strong class="game-title">크로노 오디세이</strong>
@@ -129,7 +131,7 @@
                   <figure>
                     <picture>
                       <source srcset="../../assets/images/bg-character03.webp" type="image/webp" />
-                      <img src="../../assets/images/bg-character03.png" alt="" aria-hidden="true" />
+                      <img src="../../assets/images/bg-character03.png" alt="" />
                     </picture>
                     <figcaption>
                       <strong class="game-title">크로노 오디세이</strong>
@@ -146,7 +148,7 @@
                   <figure>
                     <picture>
                       <source srcset="../../assets/images/bg-character04.webp" type="image/webp" />
-                      <img src="../../assets/images/bg-character04.png" alt="" aria-hidden="true" />
+                      <img src="../../assets/images/bg-character04.png" alt="" />
                     </picture>
                     <figcaption>
                       <strong class="game-title">크로노 오디세이</strong>
@@ -163,7 +165,7 @@
                   <figure>
                     <picture>
                       <source srcset="../../assets/images/bg-character05.webp" type="image/webp" />
-                      <img src="../../assets/images/bg-character05.png" alt="" aria-hidden="true" />
+                      <img src="../../assets/images/bg-character05.png" alt="" />
                     </picture>
                     <figcaption>
                       <strong class="game-title">크로노 오디세이</strong>
@@ -180,7 +182,7 @@
                   <figure>
                     <picture>
                       <source srcset="../../assets/images/bg-character06.webp" type="image/webp" />
-                      <img src="../../assets/images/bg-character06.png" alt="" aria-hidden="true" />
+                      <img src="../../assets/images/bg-character06.png" alt="" />
                     </picture>
                     <figcaption>
                       <strong class="game-title">크로노 오디세이</strong>
@@ -195,7 +197,7 @@
         </div>
       </div>
       <div class="carousel-footer">
-        <button type="button" class="circle-button prev" title="이전">
+        <button type="button" class="circle-button prev" aria-label="이전">
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
             <path d="M0.29297 0.29297C0.683494 -0.0975548 1.31651 -0.0975548 1.70703 0.29297L7.70703 6.29297C8.09756 6.68349 8.09756 7.31651 7.70703 7.70703L1.70703 13.707C1.31651 14.0976 0.683494 14.0976 0.29297 13.707C-0.0975548 13.3165 -0.0975548 12.6835 0.29297 12.293L5.58594 7L0.29297 1.70703C-0.0975548 1.31651 -0.0975548 0.683494 0.29297 0.29297Z" fill="#474747"/>
           </svg>
@@ -209,7 +211,7 @@
           <span class="total-page">3</span>
           <span class="sr-only">페이지</span>
         </div>
-        <button type="button" class="circle-button next" title="다음">
+        <button type="button" class="circle-button next" aria-label="다음">
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
             <path d="M0.29297 0.29297C0.683494 -0.0975548 1.31651 -0.0975548 1.70703 0.29297L7.70703 6.29297C8.09756 6.68349 8.09756 7.31651 7.70703 7.70703L1.70703 13.707C1.31651 14.0976 0.683494 14.0976 0.29297 13.707C-0.0975548 13.3165 -0.0975548 12.6835 0.29297 12.293L5.58594 7L0.29297 1.70703C-0.0975548 1.31651 -0.0975548 0.683494 0.29297 0.29297Z" fill="#474747"/>
           </svg>
