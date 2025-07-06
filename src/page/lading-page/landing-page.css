@@ -1,0 +1,202 @@
+:root {
+  --base-font-family: "Noto Sans KR", sans-serif;
+
+  /* 색상 테마 */
+  --white: #fff;
+  --black-100: #1D1316;
+  --red: #B31116;
+  --orange: #FF6000;
+  --yellow: #FFD528;
+  --light-green: #DFE8E0;
+
+  /* 글자 크기 */
+  --size-16: 1rem;
+  --size-20: 1.25rem;
+  --size-24: 1.5rem;
+  --size-86: 5.375rem;
+
+  /* 줄 높이 */
+  --leading-base: 1.2;
+}
+ 
+body {
+  font-size: var(--size-16);
+  color: var(--black-100);
+  line-height: var(--leading-base);
+  font-family: var(--base-font-family);
+  background-color: #fff;
+  font-weight: 300;
+}
+
+:focus-visible {
+  outline: 1px solid #2049df;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 2.25rem;
+  min-height: 100vh;
+  justify-content: space-evenly;
+}
+
+.text-container {
+
+  .sub-title,
+  .title {
+    color: var(--red);
+    font-size: var(--size-16);
+    font-weight: 700;
+  }
+
+  .sub-title {
+    margin-block-start: 5.5rem;
+    font-size: var(--size-86);
+
+    span {
+      font-weight: 100;
+    }
+  }
+
+  .description {
+    margin-block-start: 4rem;
+    font-size: var(--size-20);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .buttons-box {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    margin-block-start: 5.25rem;
+
+    .basic-button {
+      padding-inline: 2.25rem;
+      padding-block: .75rem;
+      color: var(--red);
+      font-size: var(--size-24);
+      font-weight: 500;
+      border-radius: 62.4375rem;
+      border: 1px solid var(--red);
+      
+      &:hover {
+        background-color: var(--black-100);
+        color: var(--white);
+        border-radius: 62.4375rem;
+        border: 1px solid transparent;
+        transition: .5s ease;
+      }
+    }
+  }
+}
+
+.sape-container {
+  position: relative;
+  justify-items: center;
+  padding-block: 4.125rem 3.3125rem;
+  padding-inline: 66px 155px;
+  
+  .grid-vertical {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #ddd;
+    z-index: -1;    
+
+    &.line01 {
+      left: 191px;
+      top: 0;
+    }
+
+    &.line02 {
+      left: 441px;
+      top: 140px;
+      height: 78%;
+    }
+
+    &.line03 {
+      top: 25px;
+      right: 155px;
+      height: 83%;
+    }
+  }
+  
+  .grid-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    z-index: -1;
+
+    &.line01 {
+      top: 191px;
+      right: 0;
+      width: 96%;
+    }
+
+    &.line02 {
+      left: 20px;
+      top: 441px;
+      width: 86%;
+    }
+
+    &.line03 {
+      left: 0;
+      bottom: 302px;
+      width: 89%;
+    }
+  }
+}
+
+.shapes-list {
+  display: grid;
+  grid-template-columns: repeat(5, 7.8125rem);
+  grid-template-rows: repeat(7, 7.8125rem);
+
+  .shape01 {
+    grid-column: 5;
+  }
+
+  .shape02 {
+    grid-column: 2 / span 2;
+  }
+
+  .shape05 {
+    grid-column: 2;
+  }
+
+  .shape06 {
+    grid-column: 3 / span 2;
+    grid-area: 3 / 3 / span 2 / span 2;
+    overflow: hidden;
+    border-radius: 50% 0% 50% 50%;
+  }
+
+  .shape11 {
+    grid-column: 2;
+  }
+
+  .shape12 {
+    grid-column: 3 / span 2;
+  }
+
+  .shape13 {
+    grid-area: 5 / 5 / span 2;
+  }
+
+  .shape14 {
+    grid-column: 2;
+  }
+
+  .shape15 {
+    grid-column: 3 / span 2;
+  }
+
+  .shape16 {
+    grid-column: 2;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}

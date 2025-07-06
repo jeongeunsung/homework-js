@@ -5,7 +5,7 @@
 - 분석, 과정 및 결과
 1. 프로토타입을 확인하여 어떻게 시작할지 순서를 정하였다.
 2. 폴더 구조부터 바꿨다 정적인 요소는 public 폴더에 동적인 요소들은 src 폴더에 넣었다.
-3. assets 폴더 안에 캐러셀 이미지를 png 파일과 webp 파일을 image-webp-converter npm 패키지로 다운받아 변환하였고, font는 tiff 파일로 되어 있어서 woff와 woff2로 외부에서 변환하였다.
+3. assets 폴더 안에 캐러셀 이미지를 png 파일과 webp 파일을 image-webp-converter npm 패키지로 다운받아 변환하였고, font는 ttf 파일로 되어 있어서 woff와 woff2로 외부에서 변환하였다.
 4. reset.css, base.css는 공통 파일에 넣고 main.css로 import하는 방식으로 처리하였다.
 5. carousel 폴더를 컴포넌트 파일안에 넣어서 작업을 하였다.
 6. html과 css를 이용하여 캐러셀안에서 작은 단위로 컴포넌트로 나눠 작업을 하였다.

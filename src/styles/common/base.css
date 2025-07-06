@@ -16,7 +16,10 @@ body *, body *::before, body *::after{
   border-width: 0;
 }
 
-/* image */
+body {
+  margin: 0;
+}
+
 a {
   display: block;
 }
