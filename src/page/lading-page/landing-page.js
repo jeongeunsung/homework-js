@@ -7,21 +7,25 @@
     const tl = gsap.timeline({
       repeat: -1,
       repeatDelay: 7.5,
-      defaults: { opacity: 0, ease: 'back.out(1.4)' },
+      defaults: { ease: 'back.out(1.4)' },
+      onRepeat: () => {
+        imageChange(i++)
+      },
       onStart: () => {
-        i = 1
-        imageChange()
+        imageChange(i)
       }
     })
     tl
-    .from('.wrapper', { ease: 'linear', autoAlpha: 0, })
-    .from('.title', { x: 1000, duration: 1 })
-    .from('.sub-title', { x: -1000, duration: 1 }, '<')
-    .from('.description', { y: 100 }, '-=0.5')
-    .from('.basic-button', { y: 150 }, '-=0.4')
-    .from('.shape', { scale: 0, transformOrigin: 'center', stagger: 0.1 })
-    .from('.grid-vertical', { scale: 0, transformOrigin: 'center' })
-    .from('.grid-horizontal', { scale: 0, transformOrigin: 'center' })
+      .from('.wrapper', { opacity: 0, ease: 'linear', autoAlpha: 0, })
+      .from('.title', { opacity: 0, x: 1000, duration: 1 })
+      .from('.sub-title', { opacity: 0, x: -1000, duration: 1 }, '<')
+      .from('.description', { opacity: 0, y: 100 }, '-=0.5')
+      .from('.basic-button', { opacity: 0, y: 150 }, '-=0.4')
+      .from('.shape', { opacity: 0, scale: 0, transformOrigin: 'center', stagger: 0.1 }, '<')
+      .from('.shape01', { rotate: 100, duration: 2, ease: "bounce.out" }, 1)
+      .from('.shape02', { x: -150, duration: 2, ease: 'bounce.out' }, '<')
+      .from('.grid-vertical', { scale: 0, transformOrigin: 'center' })
+      .from('.grid-horizontal', { scale: 0, transformOrigin: 'center' })
   }
   
   
@@ -30,11 +34,6 @@
     const imageIndex = document.querySelector('.image-model img')
 
     for(let i = 1; i <= total; i++) {
-      // if(i === 17) {
-      //   i--
-      //   console.log(i--)
-      // }
-
       setTimeout(() => {
         imageIndex.src = `../../assets/images/img-model${i}.png`
       }, i * 500)
