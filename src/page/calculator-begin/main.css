@@ -1,14 +1,13 @@
 /* @layer base, animation, theme, components, utilities; */
 
-@import url(./);
-@import './' layer(base);
-@import '../assets/styles/_base.css' layer(base);
+@import '../calculator-begin/common/normalize.css' layer(base);
+@import '../calculator-begin/common/base.css' layer(base);
 
-@import '../assets/styles/_animation.css' layer(animation);
+@import '../calculator-begin/common/animation.css' layer(animation);
 
-@import '../assets/styles/_theme.css' layer(theme);
-@import './_theme.css' layer(theme);
+@import '../calculator-begin/common/theme.css' layer(theme);
+@import './styles/theme.css' layer(theme);
 
-@import './components/_calculator.css' layer(components);
+@import './component/calculator.css' layer(components);
 
-@import './_demo.css';
+@import './styles/demo.css';
