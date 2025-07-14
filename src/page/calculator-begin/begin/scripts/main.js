@@ -136,6 +136,143 @@
   
 })
 
+// 직접풀어보기 3
+;(() => {
+  const container = document.querySelector('.calculator__container')
+  const display = container.querySelector('.calculator__display')
+  const plusButton = container.querySelector('[data-key="plus"]')
+  const minusButton = container.querySelector('[data-key="minus"]')
+  const timesButton = container.querySelector('[data-key="times"]')
+  const divideButton = container.querySelector('[data-key="divide"]')
+  const decimalButton = container.querySelector('[data-key="decimal"]')
+  const clearButton = container.querySelector('[data-key="clear"]')
+  const equalButton = container.querySelector('[data-key="equal"]')
+  const numbersButton = container.querySelectorAll('[data-button-type="number"]')
+
+  let inputNumbers = []
+  let operator = ''
+  let isOperatorClicked = false
+  let currentNumber = ''
+
+  function handleOperator() {
+    if(currentNumber !== '') {
+      inputNumbers.push(Number(currentNumber))
+      currentNumber = ''
+    }
+
+    const operatorKey = this.dataset.key
+
+    if (operatorKey === 'plus') {
+      operator = '+'
+    } else if (operatorKey === 'minus') {
+      operator = '-'
+    } else if (operatorKey === 'times') {
+      operator = '*'
+    } else if (operatorKey === 'divide') {
+      operator = '/'
+    }
+    
+    display.textContent = operator
+    isOperatorClicked = true
+  }
+
+  // plus 버튼 클릭시 이벤트
+  plusButton.addEventListener('click', handleOperator)
+
+  // minus 버튼 클릭시 이벤트
+  minusButton.addEventListener('click',handleOperator)
+
+  // 곱하기 버튼 클릭시 이벤트
+  timesButton.addEventListener('click', handleOperator)
+
+  // 나누기 버튼 클릭시 이벤트
+  divideButton.addEventListener('click', handleOperator) 
+
+  // 숫자 버튼 클릭시 이벤트
+  numbersButton.forEach((number) => {
+    number.addEventListener('click', function() {
+      if (isOperatorClicked) {
+        currentNumber = ''
+        isOperatorClicked = false
+      }
+
+      currentNumber += this.textContent
+      display.textContent = Number(currentNumber)
+    })
+  })
+
+  // decimal 버튼 클릭시 이벤트
+  decimalButton.addEventListener('click', function() {
+    if(!currentNumber.includes('.')) {
+      
+      // operator 클릭하면 현재값 빈값이고 oprator 클릭하지 않은 상태로 변경
+      if(isOperatorClicked) {
+        currentNumber = ''
+        isOperatorClicked = false
+      }
+
+      currentNumber += '.'
+      display.textContent = currentNumber
+    }
+  })
+
+  // equal 버튼 클릭시 이벤트
+  equalButton.addEventListener('click', function() {
+
+    if (!operator) {
+      display.textContent = currentNumber || inputNumbers[0] || 0
+      currentNumber = '' 
+      return 
+    }
+
+    if(currentNumber !== '') {
+      inputNumbers.push(Number(currentNumber))
+    }
+
+    if (inputNumbers.length >= 2) {
+      let sum = 0
+
+      if (operator === '+') {
+        sum = inputNumbers.reduce((acc, cur) => {
+          return acc + cur
+        })
+      } else if (operator === '-') {
+        sum = inputNumbers.reduce((acc, cur) => {
+          return acc - cur
+        }) 
+      } else if (operator === '*') {
+        sum = inputNumbers.reduce((acc, cur) => {
+          return acc * cur
+        })
+      } else if (operator === '/') {
+        sum = inputNumbers.reduce((acc, cur) => {
+          return acc / cur
+        })
+      }
+
+      console.log('inputNumbers:', inputNumbers)
+      console.log('operator:', operator)
+      
+      display.textContent = sum
+      
+      console.log(`${inputNumbers[0]} ${operator} ${Number(currentNumber)} = ${sum}`)
+      
+      inputNumbers = [sum]
+      currentNumber = ''
+      operator = ''
+      isOperatorClicked = false
+    }
+  })
+  
+  // clear 버튼 클릭시 이벤트
+  clearButton.addEventListener('click', function() {
+    currentNumber = 0
+    inputNumbers = []
+    display.textContent = currentNumber
+  }) 
+  
+})()
+
 // 쌤 계산기 따라하기
 ;(() => {
   const PRESSED_CLASSNAME = 'is-pressed'
@@ -395,4 +532,4 @@
   function getDisplayValue() {
     return calculatorDisplay.textContent
   }  
-})()
+})
