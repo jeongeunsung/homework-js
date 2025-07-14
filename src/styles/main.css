@@ -1,7 +1,7 @@
 /* common */
 @import url(./common/base.css);
 @import url(./common/reset.css);
-@import url(./common/_normalize.css);
-@import url(./common/_base.css);
-@import url(./common/_animation.css);
-@import url(./common/_theme.css);
+@import url(./common/normalize.css);
+@import url(./common/base.css);
+@import url(./common/animation.css);
+@import url(./common/theme.css);
