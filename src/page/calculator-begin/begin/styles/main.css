@@ -1,12 +1,12 @@
 @layer base, animation, theme, components, utilities;
 
 @import '/src/assets/styles/_normalize.css' layer(base);
-@import 'src/assets/styles/_normalize.css' layer(base);
-@import 'src/assets/styles/_base.css' layer(base);
+@import '/src/assets/styles/_normalize.css' layer(base);
+@import '/src/assets/styles/_base.css' layer(base);
 
-@import 'src/assets/styles/_animation.css' layer(animation);
+@import '/src/assets/styles/_animation.css' layer(animation);
 
-@import 'src/assets/styles/_theme.css' layer(theme);
+@import '/src/assets/styles/_theme.css' layer(theme);
 @import './_theme.css' layer(theme);
 
 @import './components/_calculator.css' layer(components);
